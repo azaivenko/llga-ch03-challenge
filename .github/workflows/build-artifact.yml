@@ -24,7 +24,7 @@ jobs:
       run: go build ${{ env.ARTIFACT_NAME }}.go
 
     - name: Test
-      run: source ./${{ env.ARTIFACT_NAME }}
+      run: ./${{ env.ARTIFACT_NAME }}
     
     - name: Upload a Build Artifact ${{ env.ARTIFACT_NAME }}
       uses: actions/upload-artifact@v3.1.1
