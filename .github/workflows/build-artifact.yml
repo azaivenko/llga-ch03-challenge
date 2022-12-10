@@ -21,13 +21,13 @@ jobs:
         go-version: 1.19
 
     - name: Build
-      run: go build ${{ ARTIFACT_NAME }}.go
+      run: go build ${{ env.ARTIFACT_NAME }}.go
 
     - name: Test
-      run: source ./${{ ARTIFACT_NAME }}
+      run: source ./${{ env.ARTIFACT_NAME }}
     
-    - name: Upload a Build Artifact ${{ ARTIFACT_NAME }}
+    - name: Upload a Build Artifact ${{ env.ARTIFACT_NAME }}
       uses: actions/upload-artifact@v3.1.1
       with:
         name: linux
-        path: ./${{ ARTIFACT_NAME }}
+        path: ./${{ env.ARTIFACT_NAME }}
