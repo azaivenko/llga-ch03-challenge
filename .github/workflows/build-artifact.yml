@@ -29,5 +29,5 @@ jobs:
     - name: Upload a Build Artifact ${{ env.ARTIFACT_NAME }}
       uses: actions/upload-artifact@v3.1.1
       with:
-        name: linux
+        name: ${{ env.ARTIFACT_NAME }}
         path: ./${{ env.ARTIFACT_NAME }}
